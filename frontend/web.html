@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-2">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR INFOTEK | Online IT Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e5aa8',
+                        accent: '#ff891c',
+                        darkbg: '#0b1324',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #1e5aa8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #15427d; }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased font-sans">
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+            
+            <a href="#" class="flex items-center hover:opacity-90 transition">
+                <img src="arinfotek_logo.png" alt="AR INFOTEK" class="h-9 md:h-11 w-auto object-contain">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-1 bg-slate-50 p-1 rounded-full border border-slate-100">
+                <a href="#" class="px-4 py-1.5 text-xs lg:text-sm font-bold text-slate-600 rounded-full hover:bg-white hover:text-primary hover:shadow-md transition-all duration-300">Home</a>
+                <a href="#courses" class="px-4 py-1.5 text-xs lg:text-sm font-bold text-slate-600 rounded-full hover:bg-white hover:text-primary hover:shadow-md transition-all duration-300">Courses</a>
+                <a href="#why" class="px-4 py-1.5 text-xs lg:text-sm font-bold text-slate-600 rounded-full hover:bg-white hover:text-primary hover:shadow-md transition-all duration-300">Why Us</a>
+                
+                <a href="#projects" class="px-4 py-1.5 text-xs lg:text-sm font-bold text-slate-600 rounded-full hover:bg-white hover:text-primary hover:shadow-md transition-all duration-300">Innovation Labs</a>
+                <a href="#internship" class="px-4 py-1.5 text-xs lg:text-sm font-bold text-slate-600 rounded-full hover:bg-white hover:text-primary hover:shadow-md transition-all duration-300">Internship</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-lg font-bold border-2 border-primary text-primary hover:bg-primary/5 transition text-xs lg:text-sm">
+                    Talk to Us
+                </a>
+                <a href="#courses" class="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-lg font-bold bg-gradient-to-r from-accent to-orange-600 text-white shadow-md hover:shadow-orange-200 hover:-translate-y-0.5 transition text-xs lg:text-sm">
+                    View Courses
+                </a>
+                
+                <button id="mobile-menu-btn" onclick="toggleMenu()" class="md:hidden p-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 z-50 hidden">
+            <div class="absolute inset-0 bg-slate-900/20 backdrop-blur-sm" onclick="toggleMenu()"></div>
+            <div class="absolute top-0 right-0 h-full w-72 bg-white shadow-2xl p-6 flex flex-col transition-transform">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="font-black text-lg text-primary tracking-tight">MENU</div>
+                    <button onclick="toggleMenu()" class="p-1.5 text-slate-400 hover:text-red-500 bg-slate-50 rounded-lg">✕</button>
+                </div>
+                <div class="flex flex-col space-y-1">
+                    <a href="#" onclick="toggleMenu()" class="block px-4 py-2.5 rounded-lg text-slate-600 font-bold hover:bg-slate-50 hover:text-primary transition">Home</a>
+                    <a href="#courses" onclick="toggleMenu()" class="block px-4 py-2.5 rounded-lg text-slate-600 font-bold hover:bg-slate-50 hover:text-primary transition">Courses</a>
+                    <a href="#why" onclick="toggleMenu()" class="block px-4 py-2.5 rounded-lg text-slate-600 font-bold hover:bg-slate-50 hover:text-primary transition">Why AR INFOTEK</a>
+                    
+                    <a href="#projects" onclick="toggleMenu()" class="block px-4 py-2.5 rounded-lg text-slate-600 font-bold hover:bg-slate-50 hover:text-primary transition">Innovation Labs</a>
+                    <a href="#internship" onclick="toggleMenu()" class="block px-4 py-2.5 rounded-lg text-slate-600 font-bold hover:bg-slate-50 hover:text-primary transition">Internship</a>
+                    
+                    <a href="#contact" onclick="toggleMenu()" class="block px-4 py-2.5 rounded-lg text-slate-600 font-bold hover:bg-slate-50 hover:text-primary transition">Contact</a>
+                </div>
+                <div class="mt-auto grid gap-3">
+                    <a href="#courses" onclick="toggleMenu()" class="text-center py-3 rounded-lg bg-accent text-white font-bold shadow-lg shadow-orange-200">View Courses</a>
+                    <a href="#contact" onclick="toggleMenu()" class="text-center py-3 rounded-lg border-2 border-primary text-primary font-bold">Talk to Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <footer class="bg-primary text-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl font-black text-white">AR INFOTEK</span>
+                </div>
+                <p class="text-sm text-slate-300">Practical, mentor-led online IT training to accelerate your career.</p>
+            </div>
+            <div>
+                <h5 class="font-bold text-accent mb-4">Programs</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#courses" class="hover:text-white">AWS Architect</a></li>
+                    <li><a href="#courses" class="hover:text-white">Data Science</a></li>
+                    <li><a href="#courses" class="hover:text-white">DevOps</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-accent mb-4">Company</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#why" class="hover:text-white">Why Us</a></li>
+                    <li><a href="#instructors" class="hover:text-white">Instructors</a></li>
+                    <li><a href="#testimonials" class="hover:text-white">Testimonials</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-accent mb-4">Legal</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white">Terms</a></li>
+                    <li><a href="#" class="hover:text-white">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-xs text-slate-400 mt-12 border-t border-white/10 pt-6">
+            © 2025 AR INFOTEK – All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({ duration: 800, once: true });
+
+        // Mobile Menu Logic
+        const menu = document.getElementById('mobile-menu');
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
