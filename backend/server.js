@@ -45,8 +45,7 @@ pool.query("SELECT NOW()")
 
 // Home Route
 app.get("/", (req, res) => {
-    res.send("Backend Running");
-    res.send(process.env.DB_HOST); 
+    res.send("Backend Running" + process.env.DB_HOST + "DB"); 
 });
 
 
