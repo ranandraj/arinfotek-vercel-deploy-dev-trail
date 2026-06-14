@@ -1,5 +1,4 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
   "experimentalServices": {
     "frontend": {
       "root": "frontend",
@@ -8,8 +7,7 @@
     },
     "backend": {
       "root": "backend",
-      "routePrefix": "/api",
-      "framework": "other"
+      "routePrefix": "/api"
     }
   }
 }
