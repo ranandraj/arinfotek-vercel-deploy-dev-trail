@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 
 
 // Get All Students
-app.get("/students", async (req, res) => {
+app.get("/api/students", async (req, res) => {
 
     try {
 
@@ -69,7 +69,7 @@ app.get("/students", async (req, res) => {
 
 
 // Login Check
-app.post("/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
 
     try {
 
