@@ -21,6 +21,10 @@ app.use(express.json());
 //     }
 // });
 
+console.log("DATABASE_URL exists:", !!process.env.DATABASE_URL);
+console.log("DB_HOST:", process.env.DB_HOST);
+console.log("DB_PORT:", process.env.DB_PORT);
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
