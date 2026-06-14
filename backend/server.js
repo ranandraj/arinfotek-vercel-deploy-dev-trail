@@ -81,6 +81,13 @@ app.get("/api/students", async (req, res) => {
 
 });
 
+app.get("/api/envtest", (req, res) => {
+    res.json({
+        DATABASE_URL_EXISTS: !!process.env.DATABASE_URL,
+        DB_HOST: process.env.DB_HOST || "missing"
+    });
+});
+
 
 // Login Check
 app.post("/api/login", async (req, res) => {
