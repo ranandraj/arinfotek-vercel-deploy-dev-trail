@@ -46,8 +46,8 @@ app.get("/api/students", async (req, res) => {
                 s.student_name,
                 s.course,
                 l.username
-            FROM student s
-            JOIN login l
+            FROM public.student s
+            JOIN public.login l
                 ON s.login_id = l.login_id
             ORDER BY s.student_id
         `);
@@ -80,7 +80,7 @@ app.post("/api/login", async (req, res) => {
         const result = await pool.query(
             `
             SELECT *
-            FROM login
+            FROM public.login
             WHERE username = $1
             AND password = $2
             `,
