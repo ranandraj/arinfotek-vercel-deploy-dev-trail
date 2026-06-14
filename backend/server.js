@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
 
 
 // Get All Students
-app.get("/api/students", async (req, res) => {
+app.get("/students", async (req, res) => {
 
     try {
 
@@ -81,14 +81,14 @@ app.get("/api/students", async (req, res) => {
 
 });
 
-app.get("/api/envtest", (req, res) => {
+app.get("/envtest", (req, res) => {
     res.send(process.env.DB_HOST); 
     });
 
 
 
 // Login Check
-app.post("/api/login", async (req, res) => {
+app.post("/login", async (req, res) => {
 
     try {
 
